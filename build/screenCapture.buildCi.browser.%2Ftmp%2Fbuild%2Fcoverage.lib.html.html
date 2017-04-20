@@ -1,5 +1,5 @@
 <html lang="en"><head>
-    <title>Code coverage report for node-npmtest-superscript/node_modules/superscript/lib/bot/processTags.js</title>
+    <title>Code coverage report for node-npmtest-superscript/node_modules/superscript/lib/bin/bot-init.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,23 +192,23 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-superscript">npmtest-superscript (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-superscript/node_modules/superscript/lib/bot/processTags.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-superscript/node_modules/superscript/lib/bin/bot-init.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">27.76% <small>(88 / 317)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">24.56% <small>(14 / 57)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">5.33% <small>(4 / 75)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">16.67% <small>(4 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Functions: <span class="metric">4.35% <small>(2 / 46)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">50% <small>(1 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">28.24% <small>(85 / 301)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">23.21% <small>(13 / 56)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../../../index.html">All files</a> » <a href="index.html">node-npmtest-superscript/node_modules/superscript/lib/bot/</a> » processTags.js</div>
+    <div class="path"><a href="../../../../../index.html">All files</a> » <a href="index.html">node-npmtest-superscript/node_modules/superscript/lib/bin/</a> » bot-init.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
@@ -317,1799 +317,221 @@
 103
 104
 105
-106
-107
-108
-109
-110
-111
-112
-113
-114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200
-201
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264
-265
-266
-267
-268
-269
-270
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282
-283
-284
-285
-286
-287
-288
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300
-301
-302
-303
-304
-305
-306
-307
-308
-309
-310
-311
-312
-313
-314
-315
-316
-317
-318
-319
-320
-321
-322
-323
-324
-325
-326
-327
-328
-329
-330
-331
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359
-360
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370
-371
-372
-373
-374
-375
-376
-377
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387
-388
-389
-390
-391
-392
-393
-394
-395
-396
-397
-398
-399
-400
-401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427
-428
-429
-430
-431
-432
-433
-434
-435
-436
-437
-438
-439
-440
-441
-442
-443
-444
-445
-446
-447
-448
-449
-450
-451
-452
-453
-454
-455
-456
-457
-458
-459
-460
-461
-462
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481
-482
-483
-484
-485
-486
-487
-488
-489
-490
-491
-492
-493
-494
-495
-496
-497
-498
-499
-500
-501
-502
-503
-504
-505
-506
-507
-508
-509
-510
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520
-521
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531
-532
-533
-534
-535
-536
-537
-538
-539
-540
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
-553
-554
-555
-556
-557
-558
-559
-560
-561
-562
-563
-564
-565
-566
-567
-568
-569
-570
-571
-572
-573
-574
-575
-576
-577
-578
-579
-580
-581
-582
-583
-584
-585
-586
-587
-588
-589
-590
-591
-592
-593
-594
-595
-596
-597
-598
-599
-600
-601
-602
-603
-604
-605
-606
-607
-608
-609
-610
-611
-612
-613
-614
-615
-616
-617
-618
-619
-620
-621
-622
-623
-624
-625
-626
-627
-628
-629
-630
-631
-632</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+106</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//#!/usr/bin/env node
+'use strict';
 &nbsp;
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+var _commander = require('commander');
 &nbsp;
-var _lodash = require('lodash');
-&nbsp;
-var _lodash2 = _interopRequireDefault(_lodash);
-&nbsp;
-var _debugLevels = require('debug-levels');
-&nbsp;
-var _debugLevels2 = _interopRequireDefault(_debugLevels);
-&nbsp;
-var _pegjs = require('pegjs');
-&nbsp;
-var _pegjs2 = _interopRequireDefault(_pegjs);
+var _commander2 = _interopRequireDefault(_commander);
 &nbsp;
 var _fs = require('fs');
 &nbsp;
 var _fs2 = _interopRequireDefault(_fs);
 &nbsp;
-var _safeEval = require('safe-eval');
+var _path = require('path');
 &nbsp;
-var _safeEval2 = _interopRequireDefault(_safeEval);
+var _path2 = _interopRequireDefault(_path);
 &nbsp;
-var _utils = require('./utils');
+function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? <span class="branch-0 cbranch-no" title="branch not covered">obj </span>: { default: obj }; }
 &nbsp;
-var _utils2 = _interopRequireDefault(_utils);
+_commander2.default.version('1.0.0').usage('botname [options]').option('-c, --clients [telnet]', 'Bot clients (express, hangout, slack, telegram, telnet, twilio) [default: telnet]', 'telnet').parse(process.argv);
 &nbsp;
-var _regexes = require('./regexes');
+<span class="missing-if-branch" title="else path not taken">E</span>if (!_commander2.default.args[0]) {
+  _commander2.default.help();
+  process.exit(1);
+}
 &nbsp;
-var _regexes2 = _interopRequireDefault(_regexes);
+const botName = _commander2.default.args[0];
+const botPath = _path2.default.join(process.cwd(), botName);
+<span class="cstat-no" title="statement not covered">const ssRoot = _path2.default.join(__dirname, '..', '..');</span>
 &nbsp;
-var _wordnet = require('./reply/wordnet');
-&nbsp;
-var _wordnet2 = _interopRequireDefault(_wordnet);
-&nbsp;
-var _inlineRedirect = require('./reply/inlineRedirect');
-&nbsp;
-var _inlineRedirect2 = _interopRequireDefault(_inlineRedirect);
-&nbsp;
-var _topicRedirect = require('./reply/topicRedirect');
-&nbsp;
-var _topicRedirect2 = _interopRequireDefault(_topicRedirect);
-&nbsp;
-var _respond = require('./reply/respond');
-&nbsp;
-var _respond2 = _interopRequireDefault(_respond);
-&nbsp;
-var _customFunction = require('./reply/customFunction');
-&nbsp;
-var _customFunction2 = _interopRequireDefault(_customFunction);
-&nbsp;
-function _interopRequireDefault(obj) { return obj &amp;&amp; obj.__esModule ? obj : { default: obj }; }
-&nbsp;
-function _asyncToGenerator(fn) { return <span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">var gen = fn.apply(this, arguments); <span class="cstat-no" title="statement not covered"></span>return new Promise(<span class="fstat-no" title="function not covered">function (resolve, reject) {</span> <span class="fstat-no" title="function not covered">function step(key, arg) {</span> <span class="cstat-no" title="statement not covered">try { <span class="cstat-no" title="statement not covered">var info = gen[key](arg); <span class="cstat-no" title="statement not covered"></span>var value = info.value; </span>} catch (error) { <span class="cstat-no" title="statement not covered">reject(error); <span class="cstat-no" title="statement not covered"></span>return; </span>} <span class="cstat-no" title="statement not covered"></span>if (info.done) { <span class="cstat-no" title="statement not covered">resolve(value); </span>} else { <span class="cstat-no" title="statement not covered">return Promise.resolve(value).then(<span class="fstat-no" title="function not covered">function (value) {</span> <span class="cstat-no" title="statement not covered">step("next", value); </span>}, <span class="fstat-no" title="function not covered">function (err) {</span> <span class="cstat-no" title="statement not covered">step("throw", err); </span>}); </span>} </span>} <span class="cstat-no" title="statement not covered">return step("next"); </span>}); </span>}; } // TODO: Fix this documentation, options is incorrect
-/**
- * Parse the reply for additional tags, this is called once we have a reply candidate filtered out.
- *
- * @param {Object} replyObj - The Reply Object
- * @param {string} replyObj.id - This is the 8 digit id mapping back to the ss parsed json
- * @param {array} replyObj.stars - All of the matched values
- * @param {string} replyObj.topic - The Topic name we matched on
- * @param {Object} replyObj.reply - This is the Mongo Reply Gambit
- * @param {string} replyObj.trigger - The input string of the gambit the user matched with their message
- * @param {string} replyObj.trigger_id - The trigger id (8 digit)
- * @param {string} replyObj.trigger_id2 - The trigger id (mongo id)
- *
- * @param {Object} options
- * @param {Object} options.user - The user object
- * @param {Object} options.system - Extra cached items that are loaded async during load-time
- * @param {Object} options.message - The original message object
- *
- * @param {array} options.system.plugins - An array of plugins loaded from the plugin folder
- * @param {Object} options.system.scope - All of the data available to `this` inside of the plugin during execution
- * @param {number} options.depth - Counter of how many times this function is called recursively.
- *
- * Replies can have the following:
- * Basic (captured text) subsitution ie: `I like &lt;cap1&gt;`
- * Input (parts of speech) subsitution ie: `I like &lt;noun&gt;`
- * Expanding terms using wordnet ie: `I like ~sport`
- * Alternate terms to choose at random ie: `I like (baseball|hockey)`
- * Custom functions that can be called ie: `I like ^chooseSport()`
- * Redirects to another reply ie: `I like {@sport}`
- */
-&nbsp;
-const debug = (0, _debugLevels2.default)('SS:ProcessTags');
-&nbsp;
-const grammar = _fs2.default.readFileSync(`${__dirname}/reply/reply-grammar.pegjs`, 'utf-8');
-// Change trace to true to debug peg
-const parser = _pegjs2.default.generate(grammar, { trace: false });
-&nbsp;
-const preprocessGrammar = _fs2.default.readFileSync(`${__dirname}/reply/preprocess-grammar.pegjs`, 'utf-8');
-// Change trace to true to debug peg
-const preprocessParser = _pegjs2.default.generate(preprocessGrammar, { trace: false });
-&nbsp;
-/* topicRedirect
-/ respond
-/ redirect
-/ customFunction
-/ newTopic
-/ capture
-/ previousCapture
-/ clearConversation
-/ continueSearching
-/ endSearching
-/ previousInput
-/ previousReply
-/ wordnetLookup
-/ alternates
-/ delay
-/ setState
-/ string*/
-&nbsp;
-const processCapture = <span class="fstat-no" title="function not covered">function processCapture(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  const starID = (tag.starID || 1) - 1;</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Processing capture: &lt;cap${starID + 1}&gt;`);</span>
-<span class="cstat-no" title="statement not covered">  const replacedCapture = starID &lt; replyObj.stars.length ? replyObj.stars[starID] : '';</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Replacing &lt;cap${starID + 1}&gt; with "${replacedCapture}"`);</span>
-<span class="cstat-no" title="statement not covered">  return replacedCapture;</span>
+<span class="cstat-no" title="statement not covered">const write = <span class="fstat-no" title="function not covered">function write(path, str, mode = 0o666) {</span></span>
+<span class="cstat-no" title="statement not covered">  _fs2.default.writeFileSync(path, str, { mode });</span>
+<span class="cstat-no" title="statement not covered">  console.log(`   \x1b[36mcreate\x1b[0m : ${path}`);</span>
 };
 &nbsp;
-const processPreviousCapture = <span class="fstat-no" title="function not covered">function processPreviousCapture(tag, replyObj, options) {</span>
-  // This is to address GH-207, pulling the stars out of the history and
-  // feeding them forward into new replies. It allows us to save a tiny bit of
-  // context though a conversation cycle.
-  // TODO: handle captures within captures, but only 1 level deep
-<span class="cstat-no" title="statement not covered">  const starID = (tag.starID || 1) - 1;</span>
-<span class="cstat-no" title="statement not covered">  const conversationID = (tag.conversationID || 1) - 1;</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Processing previous capture: &lt;p${conversationID + 1}cap${starID + 1}&gt;`);</span>
-<span class="cstat-no" title="statement not covered">  let replacedCapture = '';</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">  if (options.user.history[conversationID].stars &amp;&amp; options.user.history[conversationID].stars[starID]) {</span>
-<span class="cstat-no" title="statement not covered">    replacedCapture = options.user.history[conversationID].stars[starID];</span>
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Replacing &lt;p${conversationID + 1}cap${starID + 1}&gt; with "${replacedCapture}"`);</span>
-  } else {
-<span class="cstat-no" title="statement not covered">    debug.verbose('Attempted to use previous capture data, but none was found in user history.');</span>
-  }
-<span class="cstat-no" title="statement not covered">  return replacedCapture;</span>
-};
-&nbsp;
-const processPreviousInput = <span class="fstat-no" title="function not covered">function processPreviousInput(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  if (tag.inputID === null) {</span>
-<span class="cstat-no" title="statement not covered">    debug.verbose('Processing previous input &lt;input&gt;');</span>
-    // This means &lt;input&gt; instead of &lt;input1&gt;, &lt;input2&gt; etc. so give the current input back
-<span class="cstat-no" title="statement not covered">    const replacedInput = options.message.clean;</span>
-<span class="cstat-no" title="statement not covered">    return replacedInput;</span>
+// Creating the path for your bot.
+<span class="cstat-no" title="statement not covered">_fs2.default.mkdir(botPath, err =&gt; {</span>
+<span class="cstat-no" title="statement not covered">  if (err &amp;&amp; err.code === 'EEXIST') {</span>
+<span class="cstat-no" title="statement not covered">    console.error(`\n\nThere is already a bot named ${botName} at ${botPath}.\nPlease remove it or pick a new name for your bot before continuing.\n`);</span>
+<span class="cstat-no" title="statement not covered">    process.exit(1);</span>
+  } else <span class="cstat-no" title="statement not covered">if (err) {</span>
+<span class="cstat-no" title="statement not covered">    console.error(`We could not create the bot: ${err}`);</span>
+<span class="cstat-no" title="statement not covered">    process.exit(1);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  const inputID = (tag.inputID || 1) - 1;</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Processing previous input &lt;input${inputID + 1}&gt;`);</span>
-<span class="cstat-no" title="statement not covered">  let replacedInput = '';</span>
-<span class="cstat-no" title="statement not covered">  if (options.user.history.length === 0) {</span>
-    // Nothing yet in the history
-<span class="cstat-no" title="statement not covered">    replacedInput = '';</span>
-  } else {
-<span class="cstat-no" title="statement not covered">    replacedInput = options.user.history[inputID].input.original;</span>
-  }
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Replacing &lt;input${inputID + 1}&gt; with "${replacedInput}"`);</span>
-<span class="cstat-no" title="statement not covered">  return replacedInput;</span>
-};
+<span class="cstat-no" title="statement not covered">  _fs2.default.mkdirSync(_path2.default.join(botPath, 'chat'));</span>
+<span class="cstat-no" title="statement not covered">  _fs2.default.mkdirSync(_path2.default.join(botPath, 'plugins'));</span>
+<span class="cstat-no" title="statement not covered">  _fs2.default.mkdirSync(_path2.default.join(botPath, 'src'));</span>
 &nbsp;
-const processPreviousReply = <span class="fstat-no" title="function not covered">function processPreviousReply(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  const replyID = (tag.replyID || 1) - 1;</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Processing previous reply &lt;reply${replyID + 1}&gt;`);</span>
-<span class="cstat-no" title="statement not covered">  let replacedReply = '';</span>
-<span class="cstat-no" title="statement not covered">  if (options.user.history === 0) {</span>
-    // Nothing yet in the history
-<span class="cstat-no" title="statement not covered">    replacedReply = '';</span>
-  } else {
-<span class="cstat-no" title="statement not covered">    replacedReply = options.user.history[replyID].reply;</span>
-  }
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Replacing &lt;reply{replyID + 1}&gt; with "${replacedReply}"`);</span>
-<span class="cstat-no" title="statement not covered">  return replacedReply;</span>
-};
+  // package.json
+<span class="cstat-no" title="statement not covered">  const pkg = {</span>
+    name: botName,
+    version: '0.0.0',
+    private: true,
+    dependencies: {
+      superscript: '^1.0.0'
+    },
+    devDependencies: {
+      'babel-cli': '^6.16.0',
+      'babel-preset-es2015': '^6.16.0'
+    },
+    scripts: {
+      build: 'babel src --presets babel-preset-es2015 --out-dir lib'
+    }
+  };
 &nbsp;
-const processWordnetLookup = (() =&gt; {
-  var _ref = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Processing wordnet lookup for word: ~${tag.term}`);</span>
-<span class="cstat-no" title="statement not covered">    let words = yield _wordnet2.default.lookup(tag.term, '~');</span>
-<span class="cstat-no" title="statement not covered">    words = words.map(<span class="fstat-no" title="function not covered">function (item) {</span></span>
-<span class="cstat-no" title="statement not covered">      return item.replace(/_/g, ' ');</span>
-    });
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Terms found in wordnet: ${words}`);</span>
+<span class="cstat-no" title="statement not covered">  const clients = _commander2.default.clients.split(',');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    const replacedWordnet = _utils2.default.pickItem(words);</span>
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Wordnet replaced term: ${replacedWordnet}`);</span>
-<span class="cstat-no" title="statement not covered">    return replacedWordnet;</span>
-  });
+<span class="cstat-no" title="statement not covered">  clients.forEach(client =&gt; {</span>
+<span class="cstat-no" title="statement not covered">    const clientName = client.toLowerCase();</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function processWordnetLookup(_x, _x2, _x3) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref.apply(this, arguments);</span>
-  }
+<span class="cstat-no" title="statement not covered">    if (['express', 'hangout', 'slack', 'telegram', 'telnet', 'twilio'].indexOf(clientName) === -1) {</span>
+<span class="cstat-no" title="statement not covered">      console.log(`Cannot create bot with client type: ${clientName}`);</span>
+<span class="cstat-no" title="statement not covered">      return;</span>
+    }
 &nbsp;
-  return processWordnetLookup;
-})();
+<span class="cstat-no" title="statement not covered">    console.log(`Creating ${_commander2.default.args[0]} bot with a ${clientName} client.`);</span>
 &nbsp;
-// Replacements are captures or wordnet lookups
-const processReplacement = (() =&gt; {
-  var _ref2 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    switch (tag.type) {</span>
-      case 'capture':
-        {
-<span class="cstat-no" title="statement not covered">          return processCapture(tag, replyObj, options);</span>
-        }
-      case 'previousCapture':
-        {
-<span class="cstat-no" title="statement not covered">          return processPreviousCapture(tag, replyObj, options);</span>
-        }
-      case 'previousInput':
-        {
-<span class="cstat-no" title="statement not covered">          return processPreviousInput(tag, replyObj, options);</span>
-        }
-      case 'previousReply':
-        {
-<span class="cstat-no" title="statement not covered">          return processPreviousReply(tag, replyObj, options);</span>
-        }
-      case 'wordnetLookup':
-        {
-<span class="cstat-no" title="statement not covered">          return processWordnetLookup(tag, replyObj, options);</span>
-        }
-      default:
-        {
-<span class="cstat-no" title="statement not covered">          throw new Error(`Replacement tag type does not exist: ${tag.type}`);</span>
-        }
+    // TODO: Pull out plugins that have dialogue and move them to the new bot.
+<span class="cstat-no" title="statement not covered">    _fs2.default.createReadStream(_path2.default.join(ssRoot, 'clients', `${clientName}.js`)).pipe(_fs2.default.createWriteStream(_path2.default.join(botPath, 'src', `server-${clientName}.js`)));</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    pkg.scripts.parse = 'parse -f';</span>
+<span class="cstat-no" title="statement not covered">    pkg.scripts[`start-${clientName}`] = `npm run build &amp;&amp; node lib/server-${clientName}.js`;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered">    if (client === 'express') {</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies.express = '4.x';</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies['body-parser'] = '1.x';</span>
+    } else <span class="cstat-no" title="statement not covered">if (client === 'hangout') {</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies['simple-xmpp'] = '1.x';</span>
+    } else <span class="cstat-no" title="statement not covered">if (client === 'slack') {</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies['slack-client'] = '1.x';</span>
+    } else <span class="cstat-no" title="statement not covered">if (client === 'telegram') {</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies['node-telegram-bot-api'] = '0.25.x';</span>
+    } else <span class="cstat-no" title="statement not covered">if (client === 'twilio') {</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies.express = '4.x';</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies['express-session'] = '1.x';</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies['body-parser'] = '1.x';</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies['connect-mongo'] = '1.x';</span>
+<span class="cstat-no" title="statement not covered">      pkg.dependencies.twilio = '2.x';</span>
     }
   });
 &nbsp;
-<span class="fstat-no" title="function not covered">  function processReplacement(_x4, _x5, _x6) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref2.apply(this, arguments);</span>
-  }
+<span class="cstat-no" title="statement not covered">  const firstRule = "+ {^hasTag('hello')} *~2\n- Hi!\n- Hi, how are you?\n- How are you?\n- Hello\n- Howdy\n- Ola";</span>
 &nbsp;
-  return processReplacement;
-})();
-&nbsp;
-const preprocess = (() =&gt; {
-  var _ref3 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (reply, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    let captureTags = preprocessParser.parse(reply);</span>
-<span class="cstat-no" title="statement not covered">    captureTags = _lodash2.default.flattenDeep(captureTags);</span>
-<span class="cstat-no" title="statement not covered">    const cleanTags = yield Promise.all(captureTags.map((() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">      var _ref4 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag) {</span></span>
-        // Don't do anything to non-captures/wordnet terms
-<span class="cstat-no" title="statement not covered">        if (typeof tag === 'string') {</span>
-<span class="cstat-no" title="statement not covered">          return tag;</span>
-        }
-        // It's a capture or wordnet lookup e.g. &lt;cap2&gt; or ~like, so replace it with
-        // the captured star in replyObj.stars or a random selection of wordnet term
-<span class="cstat-no" title="statement not covered">        const replacement = yield processReplacement(tag, replyObj, options);</span>
-<span class="cstat-no" title="statement not covered">        return `"${replacement}"`;</span>
-      });
-&nbsp;
-<span class="cstat-no" title="statement not covered">      return <span class="fstat-no" title="function not covered">function (_x10) {</span></span>
-<span class="cstat-no" title="statement not covered">        return _ref4.apply(this, arguments);</span>
-      };
-    })()));
-<span class="cstat-no" title="statement not covered">    return cleanTags.join('');</span>
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function preprocess(_x7, _x8, _x9) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref3.apply(this, arguments);</span>
-  }
-&nbsp;
-  return preprocess;
-})();
-&nbsp;
-const postAugment = <span class="fstat-no" title="function not covered">function postAugment(replyObject, augmentedReplyObject) {</span>
-<span class="cstat-no" title="statement not covered">  replyObject.continueMatching = augmentedReplyObject.continueMatching;</span>
-<span class="cstat-no" title="statement not covered">  replyObject.clearConversation = replyObject.clearConversation || augmentedReplyObject.clearConversation;</span>
-<span class="cstat-no" title="statement not covered">  replyObject.topic = augmentedReplyObject.topicName;</span>
-<span class="cstat-no" title="statement not covered">  replyObject.props = _lodash2.default.merge(replyObject.props, augmentedReplyObject.props);</span>
-&nbsp;
-  // Keep track of all the ids of all the triggers we go through via redirects
-<span class="cstat-no" title="statement not covered">  if (augmentedReplyObject.replyIds) {</span>
-<span class="cstat-no" title="statement not covered">    augmentedReplyObject.replyIds.forEach(replyId =&gt; {</span>
-<span class="cstat-no" title="statement not covered">      replyObject.replyIds.push(replyId);</span>
-    });
-  }
-&nbsp;
-<span class="cstat-no" title="statement not covered">  if (augmentedReplyObject.subReplies) {</span>
-<span class="cstat-no" title="statement not covered">    if (replyObject.subReplies) {</span>
-<span class="cstat-no" title="statement not covered">      replyObject.subReplies = replyObject.subReplies.concat(augmentedReplyObject.subReplies);</span>
-    } else {
-<span class="cstat-no" title="statement not covered">      replyObject.subReplies = augmentedReplyObject.subReplies;</span>
-    }
-  }
-&nbsp;
-<span class="cstat-no" title="statement not covered">  replyObject.debug = augmentedReplyObject.debug;</span>
-<span class="cstat-no" title="statement not covered">  return augmentedReplyObject.string;</span>
-};
-&nbsp;
-const processTopicRedirect = (() =&gt; {
-  var _ref5 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    let cleanedArgs = null;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">      cleanedArgs = (0, _safeEval2.default)(tag.functionArgs);</span>
-    } catch (err) {
-<span class="cstat-no" title="statement not covered">      throw new Error(`Error processing topicRedirect args: ${err}`);</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    const topicName = cleanedArgs[0];</span>
-<span class="cstat-no" title="statement not covered">    const topicTrigger = cleanedArgs[1];</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Processing topic redirect ^topicRedirect(${topicName},${topicTrigger})`);</span>
-<span class="cstat-no" title="statement not covered">    options.depth += 1;</span>
-<span class="cstat-no" title="statement not covered">    const augmentedReplyObject = yield (0, _topicRedirect2.default)(topicName, topicTrigger, options);</span>
-<span class="cstat-no" title="statement not covered">    return postAugment(replyObj, augmentedReplyObject);</span>
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function processTopicRedirect(_x11, _x12, _x13) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref5.apply(this, arguments);</span>
-  }
-&nbsp;
-  return processTopicRedirect;
-})();
-&nbsp;
-const processRespond = (() =&gt; {
-  var _ref6 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    let cleanedArgs = null;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">      cleanedArgs = (0, _safeEval2.default)(tag.functionArgs);</span>
-    } catch (err) {
-<span class="cstat-no" title="statement not covered">      throw new Error(`Error processing respond args: ${err}`);</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    const topicName = cleanedArgs[0];</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Processing respond: ^respond(${topicName})`);</span>
-<span class="cstat-no" title="statement not covered">    options.depth += 1;</span>
-<span class="cstat-no" title="statement not covered">    const augmentedReplyObject = yield (0, _respond2.default)(topicName, options);</span>
-<span class="cstat-no" title="statement not covered">    return postAugment(replyObj, augmentedReplyObject);</span>
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function processRespond(_x14, _x15, _x16) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref6.apply(this, arguments);</span>
-  }
-&nbsp;
-  return processRespond;
-})();
-&nbsp;
-const processRedirect = (() =&gt; {
-  var _ref7 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Processing inline redirect: {@${tag.trigger}}`);</span>
-<span class="cstat-no" title="statement not covered">    options.depth += 1;</span>
-<span class="cstat-no" title="statement not covered">    const augmentedReplyObject = yield (0, _inlineRedirect2.default)(tag.trigger, options);</span>
-<span class="cstat-no" title="statement not covered">    return postAugment(replyObj, augmentedReplyObject);</span>
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function processRedirect(_x17, _x18, _x19) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref7.apply(this, arguments);</span>
-  }
-&nbsp;
-  return processRedirect;
-})();
-&nbsp;
-const processCustomFunction = (() =&gt; {
-  var _ref8 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    if (tag.functionArgs === null) {</span>
-<span class="cstat-no" title="statement not covered">      debug.verbose(`Processing custom function: ^${tag.functionName}()`);</span>
-<span class="cstat-no" title="statement not covered">      return (0, _customFunction2.default)(tag.functionName, [], replyObj, options);</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    let cleanArgs = null;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">      cleanArgs = (0, _safeEval2.default)(tag.functionArgs);</span>
-    } catch (e) {
-<span class="cstat-no" title="statement not covered">      throw new Error(`Error processing custom function arguments: ${e}`);</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    const response = yield (0, _customFunction2.default)(tag.functionName, cleanArgs, replyObj, options);</span>
-    // The custom function might return something with more tags, so do it all again
-<span class="cstat-no" title="statement not covered">    let preprocessed;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">      preprocessed = yield preprocess(response, replyObj, options);</span>
-    } catch (err) {
-<span class="cstat-no" title="statement not covered">      throw new Error(`There was an error preprocessing reply tags: ${err}`);</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    const replyTags = parser.parse(preprocessed);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">      const processedReplyParts = yield Promise.all(replyTags.map((() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">        var _ref9 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag) {</span></span>
-<span class="cstat-no" title="statement not covered">          return processTag(tag, replyObj, options);</span>
-        });
-&nbsp;
-<span class="cstat-no" title="statement not covered">        return <span class="fstat-no" title="function not covered">function (_x23) {</span></span>
-<span class="cstat-no" title="statement not covered">          return _ref9.apply(this, arguments);</span>
-        };
-      })()));
-<span class="cstat-no" title="statement not covered">      return processedReplyParts.join('').trim();</span>
-    } catch (err) {
-<span class="cstat-no" title="statement not covered">      throw new Error(`There was an error processing reply tags: ${err}`);</span>
-    }
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function processCustomFunction(_x20, _x21, _x22) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref8.apply(this, arguments);</span>
-  }
-&nbsp;
-  return processCustomFunction;
-})();
-&nbsp;
-const processNewTopic = (() =&gt; {
-  var _ref10 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    debug.verbose(`Processing new topic: ${tag.topicName}`);</span>
-<span class="cstat-no" title="statement not covered">    const newTopic = tag.topicName;</span>
-<span class="cstat-no" title="statement not covered">    yield options.user.setTopic(newTopic);</span>
-<span class="cstat-no" title="statement not covered">    return '';</span>
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function processNewTopic(_x24, _x25, _x26) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref10.apply(this, arguments);</span>
-  }
-&nbsp;
-  return processNewTopic;
-})();
-&nbsp;
-const processClearConversation = <span class="fstat-no" title="function not covered">function processClearConversation(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose('Processing clear conversation: setting clear conversation to true');</span>
-<span class="cstat-no" title="statement not covered">  replyObj.clearConversation = true;</span>
-<span class="cstat-no" title="statement not covered">  return '';</span>
-};
-&nbsp;
-const processContinueSearching = <span class="fstat-no" title="function not covered">function processContinueSearching(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose('Processing continue searching: setting continueMatching to true');</span>
-<span class="cstat-no" title="statement not covered">  replyObj.continueMatching = true;</span>
-<span class="cstat-no" title="statement not covered">  return '';</span>
-};
-&nbsp;
-const processEndSearching = <span class="fstat-no" title="function not covered">function processEndSearching(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose('Processing end searching: setting continueMatching to false');</span>
-<span class="cstat-no" title="statement not covered">  replyObj.continueMatching = false;</span>
-<span class="cstat-no" title="statement not covered">  return '';</span>
-};
-&nbsp;
-const processAlternates = <span class="fstat-no" title="function not covered">function processAlternates(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Processing alternates: ${tag.alternates}`);</span>
-<span class="cstat-no" title="statement not covered">  const alternates = tag.alternates;</span>
-<span class="cstat-no" title="statement not covered">  const random = _utils2.default.getRandomInt(0, alternates.length - 1);</span>
-<span class="cstat-no" title="statement not covered">  const result = alternates[random];</span>
-<span class="cstat-no" title="statement not covered">  return result;</span>
-};
-&nbsp;
-const processDelay = <span class="fstat-no" title="function not covered">function processDelay(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  return `{delay=${tag.delayLength}}`;</span>
-};
-&nbsp;
-const processSetState = <span class="fstat-no" title="function not covered">function processSetState(tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">  debug.verbose(`Processing setState: ${JSON.stringify(tag.stateToSet)}`);</span>
-<span class="cstat-no" title="statement not covered">  const stateToSet = tag.stateToSet;</span>
-<span class="cstat-no" title="statement not covered">  const newState = {};</span>
-<span class="cstat-no" title="statement not covered">  stateToSet.forEach(keyValuePair =&gt; {</span>
-<span class="cstat-no" title="statement not covered">    const key = keyValuePair.key;</span>
-<span class="cstat-no" title="statement not covered">    let value = keyValuePair.value;</span>
-&nbsp;
-    // Value is a string
-<span class="cstat-no" title="statement not covered">    value = value.replace(/["']/g, '');</span>
-&nbsp;
-    // Value is an integer
-<span class="cstat-no" title="statement not covered">    if (/^[\d]+$/.test(value)) {</span>
-<span class="cstat-no" title="statement not covered">      value = +value;</span>
-    }
-&nbsp;
-    // Value is a boolean
-<span class="cstat-no" title="statement not covered">    if (value === 'true') {</span>
-<span class="cstat-no" title="statement not covered">      value = true;</span>
-    } else <span class="cstat-no" title="statement not covered">if (value === 'false') {</span>
-<span class="cstat-no" title="statement not covered">      value = false;</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    newState[key] = value;</span>
-  });
-<span class="cstat-no" title="statement not covered">  debug.verbose(`New state: ${JSON.stringify(newState)}`);</span>
-<span class="cstat-no" title="statement not covered">  options.user.conversationState = _lodash2.default.merge(options.user.conversationState, newState);</span>
-<span class="cstat-no" title="statement not covered">  options.user.markModified('conversationState');</span>
-<span class="cstat-no" title="statement not covered">  return '';</span>
-};
-&nbsp;
-const processTag = (() =&gt; {
-  var _ref11 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag, replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    if (typeof tag === 'string') {</span>
-<span class="cstat-no" title="statement not covered">      return tag;</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    const tagType = tag.type;</span>
-<span class="cstat-no" title="statement not covered">    switch (tagType) {</span>
-      case 'capture':
-      case 'previousCapture':
-      case 'previousInput':
-      case 'previousReply':
-      case 'wordnetLookup':
-        {
-<span class="cstat-no" title="statement not covered">          return processReplacement(tag, replyObj, options);</span>
-        }
-      case 'topicRedirect':
-        {
-<span class="cstat-no" title="statement not covered">          return processTopicRedirect(tag, replyObj, options);</span>
-        }
-      case 'respond':
-        {
-<span class="cstat-no" title="statement not covered">          return processRespond(tag, replyObj, options);</span>
-        }
-      case 'customFunction':
-        {
-<span class="cstat-no" title="statement not covered">          return processCustomFunction(tag, replyObj, options);</span>
-        }
-      case 'newTopic':
-        {
-<span class="cstat-no" title="statement not covered">          return processNewTopic(tag, replyObj, options);</span>
-        }
-      case 'clearConversation':
-        {
-<span class="cstat-no" title="statement not covered">          return processClearConversation(tag, replyObj, options);</span>
-        }
-      case 'continueSearching':
-        {
-<span class="cstat-no" title="statement not covered">          return processContinueSearching(tag, replyObj, options);</span>
-        }
-      case 'endSearching':
-        {
-<span class="cstat-no" title="statement not covered">          return processEndSearching(tag, replyObj, options);</span>
-        }
-      case 'redirect':
-        {
-<span class="cstat-no" title="statement not covered">          return processRedirect(tag, replyObj, options);</span>
-        }
-      case 'alternates':
-        {
-<span class="cstat-no" title="statement not covered">          return processAlternates(tag, replyObj, options);</span>
-        }
-      case 'delay':
-        {
-<span class="cstat-no" title="statement not covered">          return processDelay(tag, replyObj, options);</span>
-        }
-      case 'setState':
-        {
-<span class="cstat-no" title="statement not covered">          return processSetState(tag, replyObj, options);</span>
-        }
-      default:
-        {
-<span class="cstat-no" title="statement not covered">          throw new Error(`No such tag type: ${tagType}`);</span>
-        }
-    }
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function processTag(_x27, _x28, _x29) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref11.apply(this, arguments);</span>
-  }
-&nbsp;
-  return processTag;
-})();
-&nbsp;
-const processReplyTags = (() =&gt; {
-  var _ref12 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (replyObj, options) {</span>
-<span class="cstat-no" title="statement not covered">    debug.verbose('Depth: ', options.depth);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    let replyString = replyObj.reply.reply;</span>
-<span class="cstat-no" title="statement not covered">    debug.info(`Reply before processing reply tags: "${replyString}"`);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    options.topic = replyObj.topic;</span>
-<span class="cstat-no" title="statement not covered">    replyObj.replyIds = [replyObj.reply._id];</span>
-&nbsp;
-    // Deals with captures and wordnet lookups within functions as a preprocessing step
-    // e.g. ^myFunction(&lt;cap1&gt;, ~hey, "otherThing")
-<span class="cstat-no" title="statement not covered">    let preprocessed;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">      preprocessed = yield preprocess(replyString, replyObj, options);</span>
-    } catch (err) {
-<span class="cstat-no" title="statement not covered">      console.error(`There was an error preprocessing reply tags: ${err}`);</span>
-<span class="cstat-no" title="statement not covered">      return null;</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    const replyTags = parser.parse(preprocessed);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    let processedReplyParts;</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">      processedReplyParts = yield Promise.all(replyTags.map((() =&gt; {</span>
-<span class="cstat-no" title="statement not covered">        var _ref13 = _asyncToGenerator(<span class="fstat-no" title="function not covered">function* (tag) {</span></span>
-<span class="cstat-no" title="statement not covered">          return processTag(tag, replyObj, options);</span>
-        });
-&nbsp;
-<span class="cstat-no" title="statement not covered">        return <span class="fstat-no" title="function not covered">function (_x32) {</span></span>
-<span class="cstat-no" title="statement not covered">          return _ref13.apply(this, arguments);</span>
-        };
-      })()));
-    } catch (err) {
-<span class="cstat-no" title="statement not covered">      console.error(`There was an error processing reply tags: ${err}`);</span>
-<span class="cstat-no" title="statement not covered">      return null;</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    replyString = processedReplyParts.join('').trim();</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    const spaceRegex = /\\s/g;</span>
-<span class="cstat-no" title="statement not covered">    replyObj.reply.reply = replyString.replace(spaceRegex, ' ');</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    debug.verbose('Final reply object from processTags: ', replyObj);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered">    if (_lodash2.default.isEmpty(options.user.pendingTopic)) {</span>
-<span class="cstat-no" title="statement not covered">      yield options.user.setTopic(replyObj.topic);</span>
-    }
-&nbsp;
-<span class="cstat-no" title="statement not covered">    return replyObj;</span>
-  });
-&nbsp;
-<span class="fstat-no" title="function not covered">  function processReplyTags(_x30, _x31) {</span>
-<span class="cstat-no" title="statement not covered">    return _ref12.apply(this, arguments);</span>
-  }
-&nbsp;
-  return processReplyTags;
-})();
-&nbsp;
-const processThreadTags = <span class="fstat-no" title="function not covered">function processThreadTags(string) {</span>
-<span class="cstat-no" title="statement not covered">  const threads = [];</span>
-<span class="cstat-no" title="statement not covered">  const strings = [];</span>
-<span class="cstat-no" title="statement not covered">  string.split('\n').forEach(line =&gt; {</span>
-<span class="cstat-no" title="statement not covered">    const match = line.match(_regexes2.default.delay);</span>
-<span class="cstat-no" title="statement not covered">    if (match) {</span>
-<span class="cstat-no" title="statement not covered">      threads.push({ delay: match[1], string: line.replace(match[0], '').trim() });</span>
-    } else {
-<span class="cstat-no" title="statement not covered">      strings.push(line);</span>
-    }
-  });
-<span class="cstat-no" title="statement not covered">  return [strings.join('\n'), threads];</span>
-};
-&nbsp;
-exports.default = {
-  preprocess,
-  processThreadTags,
-  processReplyTags
-};
+<span class="cstat-no" title="statement not covered">  write(_path2.default.join(botPath, 'package.json'), JSON.stringify(pkg, null, 2));</span>
+<span class="cstat-no" title="statement not covered">  write(_path2.default.join(botPath, 'chat', 'main.ss'), firstRule);</span>
+});
 &nbsp;</pre></td></tr>
 </tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 12:43:04 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Thu Apr 20 2017 02:31:28 GMT+0000 (UTC)</div>
 </div>
 
 
