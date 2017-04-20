@@ -1,4 +1,7 @@
-# test coverage for  [superscript (v1.1.0)](http://superscriptjs.com)  [![npm package](https://img.shields.io/npm/v/npmtest-superscript.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-superscript) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-superscript.svg)](https://travis-ci.org/npmtest/node-npmtest-superscript)
+# npmtest-superscript
+
+#### basic test coverage for  [superscript (v1.1.0)](http://superscriptjs.com)  [![npm package](https://img.shields.io/npm/v/npmtest-superscript.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-superscript) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-superscript.svg)](https://travis-ci.org/npmtest/node-npmtest-superscript)
+
 #### A dialog system and bot engine for creating human-like chat bots.
 
 [![NPM](https://nodei.co/npm/superscript.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/superscript)
